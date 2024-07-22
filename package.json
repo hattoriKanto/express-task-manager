@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon src/app.ts",
-    "vercel-build": "echo hello"
+    "vercel-build": "npx prisma generate && echo hello"
   },
   "author": "hattori.kanto",
   "license": "ISC",
