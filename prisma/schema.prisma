@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model Widget {
+  id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+}
+
+model Task {
+  id          Int @id @default(sequence())
+  title       String
+  category    String
+  date        DateTime
+  completed   Boolean @default(false)
+  new         Boolean @default(true)
+}
