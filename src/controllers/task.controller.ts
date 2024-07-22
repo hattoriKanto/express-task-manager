@@ -2,7 +2,7 @@ import { StatusCodes as STATUS_CODES } from "http-status-codes";
 import * as TaskServices from "../services/task.service";
 import { Controller, NewTask, TaskToUpdate } from "../types";
 import { MESSAGES } from "../utils/Messages";
-import { server_url } from "..";
+import { server_url } from "../app";
 
 export const getAllTasks: Controller = async (req, res, next) => {
   try {
