@@ -2,7 +2,7 @@ import { StatusCodes as STATUS_CODES } from "http-status-codes";
 import * as TaskServices from "../services/task.service";
 import { Controller, NewTask, TaskToUpdate } from "../types";
 import { MESSAGES } from "../utils/Messages";
-import { server_url } from "../app";
+import { SERVER_URL } from "../app";
 
 export const getAllTasks: Controller = async (req, res, next) => {
   try {
@@ -45,7 +45,7 @@ export const createTask: Controller = async (req, res, next) => {
   try {
     const newTask = req.body as NewTask;
     const result = await TaskServices.createTask(newTask);
-    const url = `${server_url}/tasks/${result.id}`;
+    const url = `${SERVER_URL}/tasks/${result.id}`;
 
     res
       .status(STATUS_CODES.CREATED)

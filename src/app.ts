@@ -12,7 +12,8 @@ dotenv.config();
 export const app = express();
 export const prisma = new PrismaClient();
 const port = process.env.PORT || 3000;
-export const server_url = process.env.SERVER_URL;
+export const SERVER_URL =
+  process.env.SERVER_URL || "https://express-task-manager.vercel.app";
 
 app.use(cors());
 app.use(express.json());
