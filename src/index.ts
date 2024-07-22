@@ -3,15 +3,18 @@ import cors from "cors";
 import express from "express";
 import { PrismaClient } from "@prisma/client";
 
+import { rootRouter } from "./routes/root.route";
 import { taskRouter } from "./routes/task.route";
 import * as Middlwares from "./middlwares/middlwares";
-import { rootRouter } from "./routes/root.route";
 
 dotenv.config();
+
+console.log(process.env);
 
 export const app = express();
 export const prisma = new PrismaClient();
 const port = process.env.PORT || 3000;
+export const server_url = process.env.SERVER_URL;
 
 app.use(cors());
 app.use(express.json());

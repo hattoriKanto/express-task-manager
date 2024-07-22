@@ -1,4 +1,4 @@
-import { prisma } from "../app";
+import { prisma } from "..";
 import { NewTask, TaskToUpdate } from "../types";
 
 export const getAllTasks = async () => {
