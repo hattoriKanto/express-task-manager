@@ -9,8 +9,6 @@ import * as Middlwares from "./middlwares/middlwares";
 
 dotenv.config();
 
-console.log(process.env);
-
 export const app = express();
 export const prisma = new PrismaClient();
 const port = process.env.PORT || 3000;
